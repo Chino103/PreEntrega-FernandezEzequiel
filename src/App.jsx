@@ -1,14 +1,20 @@
 import './App.css';
 import Navbar from './componentes/Navbar/Navbar';
-import ProductCard from './componentes/ProductCard/ProductCard';
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
   return (
     <>
+      <BrowserRouter>
       <Navbar />
-      <ItemListContainer greeting="La mejor carta del mundo" />
-      <ProductCard />
+      <Routes>
+        <Route path="/" element={<ItemListContainer/>} />
+        <Route path="/categoria/:idCategoria" element={<ItemListContainer/>} />
+        <Route path="/item/:idItem" element={<ItemDetailContainer/>} />
+      </Routes>
+      </BrowserRouter>
     </>
   );
 }

@@ -1,0 +1,5 @@
+.imgProducto {
+    width: 200px;
+    object-fit: contain;
+    border-radius:4rem;
+}
